@@ -16,6 +16,11 @@ public class DemoApplication {
 		System.out.println(coach.getDailyWorkout());
 		System.out.println(coach.getDailyFortune());
 		
+		CricketCoach cricketCoach = applicationContext.getBean("myCricketCoach", CricketCoach.class);
+		
+		System.out.println(cricketCoach.getDailyWorkout());
+		System.out.println(cricketCoach.getDailyFortune());
+				
 		applicationContext.close();
 	}
 

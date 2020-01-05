@@ -13,6 +13,9 @@
     	<constructor-arg ref="myFortune"></constructor-arg>
     </bean>
     
+    <bean id="myCricketCoach" class="com.example.demo.CricketCoach">
+    	<property name="fortuneService" ref="myFortune"></property>
+    </bean>
 </beans>
 
 
