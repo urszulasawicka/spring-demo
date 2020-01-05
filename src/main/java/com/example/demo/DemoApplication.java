@@ -20,7 +20,9 @@ public class DemoApplication {
 		
 		System.out.println(cricketCoach.getDailyWorkout());
 		System.out.println(cricketCoach.getDailyFortune());
-				
+		System.out.println(cricketCoach.getEmailAddress());
+		System.out.println(cricketCoach.getTeam());
+		
 		applicationContext.close();
 	}
 
