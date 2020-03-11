@@ -33,6 +33,12 @@ public class DemoApplication {
 		System.out.println("Pointing to the same object: " + (beanScopeCoach == alphaBeanScopeCoach));
 		
 		beanScopeApplicationContext.close();
+		
+		ClassPathXmlApplicationContext beanLifecycleApplicationContext = new ClassPathXmlApplicationContext("beanLifecycle-applicationContext.xml");		
+		
+		Coach beanLifecycleCoach = beanLifecycleApplicationContext.getBean("myCoach", Coach.class);
+
+		beanLifecycleApplicationContext.close();
 	}
 
 }
