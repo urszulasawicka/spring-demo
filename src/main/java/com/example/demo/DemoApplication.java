@@ -15,7 +15,7 @@ public class DemoApplication {
 				"applicationContext.xml");
 
 		// get the bean from spring container
-		Coach coach = singletonScopeApplicationContext.getBean("myCoach", Coach.class);
+		Coach coach = singletonScopeApplicationContext.getBean("trackCoach", Coach.class);
 
 		// call a method on the bean
 		System.out.println(coach.getDailyWorkout());
@@ -30,6 +30,7 @@ public class DemoApplication {
 		
 		Coach theTennisCoach  = singletonScopeApplicationContext.getBean("tennisCoach", Coach.class);
 		System.out.println(theTennisCoach.getDailyWorkout());
+		System.out.println(theTennisCoach.getDailyFortune());
 		
 		// close the context
 		singletonScopeApplicationContext.close();
@@ -37,8 +38,8 @@ public class DemoApplication {
 		ClassPathXmlApplicationContext beanScopeApplicationContext = new ClassPathXmlApplicationContext(
 				"beanScope-applicationContext.xml");
 
-		Coach beanScopeCoach = beanScopeApplicationContext.getBean("myCoach", Coach.class);
-		Coach alphaBeanScopeCoach = beanScopeApplicationContext.getBean("myCoach", Coach.class);
+		Coach beanScopeCoach = beanScopeApplicationContext.getBean("trackCoach", Coach.class);
+		Coach alphaBeanScopeCoach = beanScopeApplicationContext.getBean("trackCoach", Coach.class);
 
 		System.out.println("Pointing to the same object: " + (beanScopeCoach == alphaBeanScopeCoach));
 
@@ -47,7 +48,7 @@ public class DemoApplication {
 		ClassPathXmlApplicationContext beanLifecycleApplicationContext = new ClassPathXmlApplicationContext(
 				"beanLifecycle-applicationContext.xml");
 
-		Coach beanLifecycleCoach = beanLifecycleApplicationContext.getBean("myCoach", Coach.class);
+		Coach beanLifecycleCoach = beanLifecycleApplicationContext.getBean("trackCoach", Coach.class);
 
 		beanLifecycleApplicationContext.close();
 	}

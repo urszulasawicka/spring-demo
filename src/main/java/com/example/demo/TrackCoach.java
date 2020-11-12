@@ -1,14 +1,13 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class TrackCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
-	public TrackCoach(FortuneService fortuneService) {
-		super();
-		this.fortuneService = fortuneService;
-	}
-
 	@Override
 	public String getDailyWorkout() {
 		return "Run a hard 5k.";
@@ -25,6 +24,11 @@ public class TrackCoach implements Coach {
 
 	public void doMyCleanupStuff() {
 		System.out.println("TrackCoach: destroy method");
+	}
+
+	@Autowired
+	public void setFortuneService(FortuneService fortuneService) {
+		this.fortuneService = fortuneService;
 	}
 
 }

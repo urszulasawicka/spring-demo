@@ -1,20 +1,15 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class CricketCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
+	
 	private String emailAddress;
+	
 	private String team;
-	
-	public CricketCoach() {
-		System.out.println("CricketCoach: inside no-arg constructor");
-	}
-	
-
-	public void setFortuneService(FortuneService fortuneService) {
-		this.fortuneService = fortuneService;
-		System.out.println("CricketCoach: inside setter method - setFortuneService");
-	}
 	
 	public String getEmailAddress() {
 		return emailAddress;

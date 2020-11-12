@@ -7,12 +7,15 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id="myFortune" class="com.example.demo.HappyFortuneService"></bean>
+	<!-- add entry to enable component scanning -->
+	<context:component-scan base-package="com.example.demo" />
+	
+	<!-- <bean id="myFortune" class="com.example.demo.HappyFortuneService"></bean>
 
 	<bean id="myCoach" class="com.example.demo.TrackCoach"
 		init-method="doMyStartupStuff" destroy-method="doMyCleanupStuff">
 		<constructor-arg ref="myFortune"></constructor-arg>
-	</bean>
+	</bean> -->
 
 </beans>
 
