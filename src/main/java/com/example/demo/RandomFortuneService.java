@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.stereotype.Component;
@@ -9,15 +11,22 @@ public class RandomFortuneService implements FortuneService {
 
 	private Random myRandom = new Random();
 	
-	private String[] data = {
-		"Beware of the wolf in sheep's clothing",
-		"Diligence is the mother of good luck",
-		"The journey is the reward"
-	};
+	private String fortunes;
+	
+	private List<String> data;
 	
 	@Override
 	public String getFortune() {
-		return data[myRandom.nextInt(data.length)];
+		return data.get(myRandom.nextInt(data.size()));
+	}
+
+	public String getFortunes() {
+		return fortunes;
+	}
+
+	public void setFortunes(String fortunes) {
+		this.fortunes = fortunes;
+		data = Arrays.asList(fortunes.split(","));
 	}
 
 }

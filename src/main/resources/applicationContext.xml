@@ -23,6 +23,10 @@
     	<property name="emailAddress" value="${foo.email}"></property>
     	<property name="team" value="${foo.team}"></property>
     </bean>
+    
+    <bean id="randomFortuneService" class="com.example.demo.RandomFortuneService">
+    	<property name="fortunes" value="${bar.fortunes}"></property>
+    </bean>
 </beans>
 
 

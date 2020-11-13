@@ -19,7 +19,6 @@ public class CricketCoach implements Coach {
 
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
-		System.out.println("CricketCoach: inside setter method - setEmailAddress");
 	}
 
 	public String getTeam() {
@@ -28,7 +27,6 @@ public class CricketCoach implements Coach {
 
 	public void setTeam(String team) {
 		this.team = team;
-		System.out.println("CricketCoach: inside setter method - setTeam");
 	}
 
 	@Override
