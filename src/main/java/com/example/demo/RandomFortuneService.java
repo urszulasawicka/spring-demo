@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.stereotype.Component;
@@ -26,7 +27,8 @@ public class RandomFortuneService implements FortuneService {
 
 	public void setFortunes(String fortunes) {
 		this.fortunes = fortunes;
-		data = Arrays.asList(fortunes.split(","));
+		Optional<String[]> listOptional = Optional.of(fortunes.split(","));
+		data = Arrays.asList(listOptional.get());
 	}
 
 }
